@@ -1,0 +1,104 @@
+body, *{margin: 0px; padding: 0px;}
+
+body{background-color: #ad0000; overflow: hidden;}
+
+.wrapper{width:100%; height: auto; position: relative;}
+
+.container{background-image: url("../assets/bg.jpg"); width: 100%; height:768px; position: absolute; top:50%;}
+
+.preloader{width:900px; height: 125px; position: absolute; left:0px; right:0px; margin: 0 auto; top:55%; margin-top:-180px; }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+.preloader .textContainer1{width:900px; height:200px; position: absolute; transform: skewY(5deg); top:200px;
+ overflow: hidden;}
+
+.preloader .textContainer1 .textwrapper{transform: skewY(-5deg); top:-200px;}
+
+.preloader .textContainer2{width:900px; height:125px; position: absolute; opacity: .1; overflow: hidden;}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+.preloader .textwrapper{width:720px; height:125px; position: absolute;}
+
+.textContainer1 .preloadTxt1{font-size: 80px; font-family:'calibri'; color:#fff; position: absolute; top:-24px;}
+
+.textContainer1 .preloadTxt2{font-size: 100px; font-family:'calibri'; color:#fff;  position: absolute; top:26px; left:-5px;}
+
+.textContainer1 .preloadPer{font-size: 180px; font-family:'calibri'; color:#fff;  position: absolute; top:-52px; left: 470px;}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+.textContainer2 .preloadTxt1{font-size: 80px; font-family:'calibri'; color:#000; position: absolute; top:-24px;}
+
+.textContainer2 .preloadTxt2{font-size: 100px; font-family:'calibri'; color:#000;  position: absolute; top:26px; left:-5px;}
+
+.textContainer2 .preloadPer{font-size: 180px; font-family:'calibri'; color:#000;  position: absolute; top:-52px; left: 470px;}
+
+.preloadshadow{width: 684px; height: 31px; position: absolute; top:170px; left:40px;}
+
+
+
+.navcontainer{width:400px; height:700px; background-color: #720000; transform: skewX(-20deg); position: absolute; left: -600px;
+position: absolute; transition: all ease .5s;}
+
+.navbox{width:300px; height:300px; transform: skewX(20deg); position: absolute; left:150px; top:100px;}
+
+.navbox ul{margin: 0px; padding: 0px;}
+
+.navbox ul li{margin: 0px; padding: 0px; width:100%; height:60px;font-family: 'roboto-thin'; color:#fff; font-size: 28px; 
+      list-style: none; cursor: pointer;}
+
+.navboxbg{width:400px; height:300px; position: absolute; top:85px;}
+
+.navboxbg ul{margin: 0px; padding: 0px;}
+
+.navboxbg ul li{margin: 0px; padding: 0px; width:100%; height:60px;font-family: 'roboto-thin'; color:#fff; font-size: 28px; 
+      list-style: none; background-color:#5f0000; opacity: 0; cursor: pointer;}
+
+
+.navtogglebutton{width:50px; height: 45px; position: absolute; top:10px; right:20px; border-radius: 5px; transform: skewX(20deg);
+background-color: green; cursor: pointer; display: block; background-color: transparent;}
+
+.navtogglebutton:hover{width:50px; height: 45px; position: absolute; top:10px; right:20px; border-radius: 5px; transform: skewX(20deg); background-color: #720000; cursor: pointer; display: block;}
+
+.navtogglebutton ul{margin-top: 10px; padding: 0px;}
+
+.navtogglebutton ul li{margin: 0px; padding: 0px; list-style: none; width:60%; height:5px; background-color: #fff; 
+    margin: 5px auto; position: absolute; left: 0px; right:0px; transform: rotate(0deg);  transition: all ease .5s;}
+
+/*---------------------------------------------------------------------------------------------*/
+.amit{width:300px; height:400px; position: absolute; border:1px solid #fff;  left:100px; text-align: center; line-height: 250px; opacity: 0; background-color: greenyellow;}
+
+.slide{width: 800px; height:400px; position: absolute; left: 0px; right:0px; margin: 0 auto; top:20%; }
+
+.name{font-family: roboto; font-size: 50px; color:#fff; position: absolute; right: 0px; top:200px; opacity: 0;}
+
+.desig{font-family: 'roboto-thin'; font-size: 21px; color:#fff; right:0px; top:255px; position: absolute;  opacity: 0;}
+
+.workthumb{width:150px; height:90px; border:1px solid #fff; position: absolute; opacity: 0; background-color: bisque;}
+
+.workthumb1{top:50px; left:10px;}
+.workthumb2{top:70px; left:140px;}
+.workthumb3{top:120px; left:-40px;}
+.workthumb4{top:150px; left:200px;}
+.workthumb5{top:180px; left:60px;}
+.workthumb6{top:50px; right:10px;}
+.workthumb7{top:70px; right:150px;}
+.workthumb8{top:100px; right:-40px;}
+.workthumb9{top:130px; right:180px;}
+.workthumb10{top:170px; right:80px;}
+
+
+.skillsthumb{width:90px; height:90px; border:1px solid #fff; position: absolute; color:#fff; opacity: 0}
+
+.skillsthumb1{top:250px; left:50px;}
+.skillsthumb2{top:170px; left:0px;}
+.skillsthumb3{top:130px; left:140px;}
+.skillsthumb4{top:10px; left:0px;}
+.skillsthumb5{top:-40px; left:350px;}
+.skillsthumb6{top:20px; right:100px;}
+.skillsthumb7{top:60px; right:210px;}
+.skillsthumb8{top:150px; right:50px;}
+.skillsthumb9{top:250px; right:110px;}
+
