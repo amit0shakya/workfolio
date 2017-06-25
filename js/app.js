@@ -221,6 +221,7 @@ $(document).ready(function(){
     
     function screen3in(){    
         
+        
         TweenLite.to(".skillsthumb",0,{y:200,alpha:0})
         
         TweenLite.to(".skillsthumb1",1,{y:0,alpha:1,delay:.1})
@@ -232,7 +233,7 @@ $(document).ready(function(){
         TweenLite.to(".skillsthumb7",1,{y:0,alpha:1,delay:.6})
         TweenLite.to(".skillsthumb8",1,{y:0,alpha:1,delay:.2})
         TweenLite.to(".skillsthumb9",1,{y:0,alpha:1,delay:.4})
-        
+        TweenLite.to(".amit",1,{x:150})
         
         parallax(".skillsthumb1",10)
         parallax(".skillsthumb2",20)
@@ -264,13 +265,18 @@ $(document).ready(function(){
     }
     
     function screen4in(){
-        console.log("screen4in")
+        TweenLite.to([".personalinfo",".info2"],0,{y:200})
         
+        TweenLite.to(".amit",1,{x:150})
+        TweenLite.to(".personalinfo",1,{y:0, alpha:1})
+        TweenLite.to(".info2",1,{y:0,delay:.2 , alpha:1})
         
     }
     
     function screen4out(){
-        console.log("screen4out")
+        
+        TweenLite.to(".personalinfo",1,{alpha:0})
+        TweenLite.to(".info2",1,{delay:.2, alpha:0})
 
     }
     
