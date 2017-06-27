@@ -2,6 +2,7 @@
     var selectedNav;
     var navToggle=true;    
     var slideno=1;
+    var wheelActive=true;
 
 $(document).ready(function(){
     /*Loading Animation*/
@@ -39,8 +40,8 @@ $(document).ready(function(){
                 navtoggle(true)
                 burgerbutton(true)
                 
-                
-            },3000)
+                mouseWheelEve();
+            },2000)
             
             webInit();
             
@@ -142,30 +143,87 @@ $(document).ready(function(){
     
     function webInit(){
         navEvents()
-        screen1in()
+        screensInit()
     }  
+    
+    
+    function mouseWheelEve(){
+         $(window).on('mousewheel',function(event){
+            getWheelEvent(event.deltaY);
+            wheelActive=false;
+        })    
+    }
+    
+    
+    function getWheelEvent(val){
+        
+        
+        if(!wheelActive){
+            return false;
+        }
+        
+        setTimeout(function(){
+            wheelActive=true
+        },3000)
+        
+        
+        
+        newval=slideno;
+        
+        if(val<0){
+            newval++;
+        }else{
+            newval--
+        }
+        
+        if(newval>5){
+            newval=5;
+        }
+        
+        console.log("get wheel event")
+        
+        if(newval<1){
+            newval=1
+        }
+        
+        if(newval==slideno){
+            return false;
+        }
+        
+        showSlide(newval);
+    }
     
 })
 
   //Show Random text animation;
-    
+    function screensInit(){   
+        var val=1
+        
+        TweenLite.to([".name",".desig"],0,{x:200})
+        TweenLite.to(".amit",0,{y:-50,x:0,alpha:0})
+        
+        TweenLite.to(".amit",1,{y:0,x:0,alpha:1})
+        TweenLite.to(".name",1,{x:0,alpha:1})
+        TweenLite.to(".desig",1,{x:0,alpha:1,delay:.2})
+    }
+
     function screen1in(){   
         var val=1
         
         TweenLite.to([".name",".desig"],0,{x:200})
-        TweenLite.to(".amit",0,{y:-50,alpha:0})
+        //TweenLite.to(".amit",0,{y:-50,x:0,alpha:0})
         
-        TweenLite.to(".amit",.5,{y:0,alpha:1})
+        TweenLite.to(".amit",1,{y:0,x:0,alpha:1})
         TweenLite.to(".name",1,{x:0,alpha:1})
         TweenLite.to(".desig",1,{x:0,alpha:1,delay:.2})
     }
-    
+
     
     function screen1out(){
         var val=1
         
-        TweenLite.to(".name",1,{y:-200,alpha:0})
-        TweenLite.to(".desig",1,{y:-200,alpha:0,delay:.1})
+        TweenLite.to(".name",1,{alpha:0})
+        TweenLite.to(".desig",1,{alpha:0,delay:.1})
     }
     
     
@@ -271,6 +329,9 @@ $(document).ready(function(){
         TweenLite.to(".personalinfo",1,{y:0, alpha:1})
         TweenLite.to(".info2",1,{y:0,delay:.2 , alpha:1})
         
+        parallax(".personalinfo",55)
+        parallax(".info2",28)
+        
     }
     
     function screen4out(){
@@ -278,6 +339,24 @@ $(document).ready(function(){
         TweenLite.to(".personalinfo",1,{alpha:0})
         TweenLite.to(".info2",1,{delay:.2, alpha:0})
 
+    }
+
+    function screen5in(){
+        TweenLite.to(".form",0,{css:{"display":"inline"}});
+        TweenLite.to(".form",0,{y:200});
+        
+        TweenLite.to(".amit",1,{x:150})
+        TweenLite.to(".form",1,{y:0, alpha:1})
+        
+        parallax(".form",82)
+    }
+
+    function screen5out(){
+        
+        TweenLite.to(".form",1,{alpha:0,onComplete:function(){
+            TweenLite.to(".form",0,{y:200,alpha:0});
+            TweenLite.to(".form",0,{css:{"display":"none"}});
+        }})
     }
     
     
@@ -287,9 +366,9 @@ $(document).ready(function(){
             var max= $(window).width()
             var min=event.pageX+1
             var per=(min/max)*100
-            xval=xp*(per/100);
+            xval=(xp*(per/100))*(-1)
             
-            TweenLite.to(who,.1,{x:xval});
+            TweenLite.to(who,3,{x:xval});
         })
     }
     
@@ -298,7 +377,7 @@ $(document).ready(function(){
         $(".navWork").click(function(){showSlide(2)});
         $(".navTech").click(function(){showSlide(3)});
         $(".navResume").click(function(){showSlide(4)});
-        //$(".navContact").click(function(){showSlide(5)});    
+        $(".navContact").click(function(){showSlide(5)});    
     }
 
     function showSlide(param){
