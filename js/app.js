@@ -167,7 +167,6 @@ $(document).ready(function(){
         },3000)
         
         
-        
         newval=slideno;
         
         if(val<0){
@@ -188,6 +187,12 @@ $(document).ready(function(){
         
         if(newval==slideno){
             return false;
+        }
+        
+        
+        if(newval>1){
+            $(".navboxbg ul li").eq(newval-2).animate({"opacity":'1'},300);
+            $(".navboxbg ul li").eq(slideno-2).animate({"opacity":'0'},300);
         }
         
         showSlide(newval);
